@@ -1,5 +1,5 @@
 '''
-4. Electricity Bill Management System
+Electricity Bill Management System
 
 You are developing an Electricity Bill Management System for a power distribution company. The system helps calculate electricity bills for customers based on their unit consumption.
 
@@ -98,78 +98,82 @@ Exiting system... Thank you!
 ---
 '''
 
-units = 0
 
+
+count=0
 while True:
-  
-     print("Menu Options:")
-     print("1 → Enter Units Consumed")
-     print("2 → Calculate Bill Amount")
-
-     print("    * First 100 units → ₹5 per unit")
-     print("    * Next 100 units → ₹7 per unit")
-     print("    * Above 200 units → ₹10 per unit")
-     print("3 → Apply Surcharge")
-     print("    * If bill > 2000 → 10% surcharge")
-     print("    * Otherwise → 5% surcharge")
-     print("4 → Display Final Bill")
-     print("5 → Exit")
-   
-     choice = int(input("Enter The choice : "))
-     match choice:
-          case 1:
-                units = int(input("Enter units consumed: "))
-                print("Units recorded successfully")
-          case 2:
-                if units > 0:
-                    if units <= 100:
-                        bill = units * 5
-                    elif units > 100 and units <= 200:
-                        bill = (100*5)+(units-100)*7
-                    else:
-                        bill = (100*5)+(100*7)+(units-200)*10
-                    print("Bill Amount: ",bill) 
+    print("\n")
+    print("1 → Enter Units Consumed")
+    print("2 → Calculate Bill Amount")
+    print("3 → Apply Surcharge")
+    print("4 → Display Final Bill")
+    print("5 → Exit \n")
+    choice=int(input("Enter your choice: "))
+    match choice:
+        case 1:
+            unit=int(input("Enter units consumed: "))
+            count=1
+            print("\n")
+            print("Units recorded successfully")
+         
+        case 2:
+            if count==1:
+                if unit<=100:
+                    bill=unit*5
+                elif unit<=200:
+                    bill=100*5+(unit-100)*7
                 else:
-                    print("Please enter units consumed first")
-          case 3:
-                if bill > 2000:
-                    surcharge = bill * 10/100
-                else: 
-                    surcharge = bill * 5/100
-                print("Surcharge:", surcharge)
-          case 4:
-                print("----Final Bill----")
-                print("Units:", units ) 
-                print("Bill Amount:", bill)
-                print("Surcharge: ", surcharge)
-                t_payable = bill + surcharge
-                print("Total Payable", t_payable) 
-          case 5:
-                print("Exiting system... Thank you!")
-                break
-          case _:
-                print("Invalid choice. Please try again.")    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    bill=100*5+100*7+(unit-200)*10
+                print("\n")
+                print("Bill Amount:",bill)
+            else:
+                print("\n")
+                print("Please enter units consumed first")
+                continue
+    
+        case 3: 
+            if count==1:
+                if bill>2000:
+                    charge=bill*10//100
+                else:
+                    charge=bill*5//100
+                    print("\n")
+                    print("Surcharge:",charge)
+            else:
+                print("\n")
+                print("Please enter units consumed first")
+                continue
+                    
+        case 4: 
+            if count==1:
+                print("\n")
+                print("----- Final Bill -----")
+                print("Units:",unit)
+                
+                if unit<=100:
+                    bill=unit*5
+                elif unit<=200:
+                    bill=100*5+(unit-100)*7
+                else:
+                    bill=100*5+100*7+(unit-200)*10
+                print("Bill Amount:",bill)
+                
+                if bill>2000:
+                    charge=bill*10//100
+                else:
+                    charge=bill*5//100
+                    print("Surcharge:",charge)
+                
+                print("Total Payable:",bill+charge)
+            else:
+                print("Please enter units consumed first")
+                continue    
+        
+        case 5:
+            print("\n")
+            print("Exiting system... Thank you!")
+            break
+        
+        case _:
+            print("\n")
+            print("Invalid choice. Please try again.")
