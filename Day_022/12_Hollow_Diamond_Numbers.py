@@ -1,12 +1,13 @@
 '''
-4) Vertical Diamond
-       *
-      * *
-     *   *
-    *     *
-     *   *
-      * *
-       *
+
+12) Hollow Diamond Numbers
+       1
+      2 2
+     3   3
+    4     4
+     3   3
+      2 2
+       1
 '''
 n = int(input('Enter a number: '))
 i =1
@@ -19,7 +20,7 @@ while i<=n:
    j = 1
    while j<=2*i-1:
       if j==1 or  j==2*i-1:
-         print('*',end='')
+         print(i,end='')
       else:
          print(' ',end='') 
       j+=1
@@ -35,7 +36,7 @@ while i>=1:
    j = 1
    while j<=2*i-1:
       if j==1 or  j==2*i-1:
-         print('*',end='')
+         print(i,end='')
       else:
          print(' ',end='') 
       j+=1
