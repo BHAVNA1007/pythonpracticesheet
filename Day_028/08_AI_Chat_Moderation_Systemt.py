@@ -17,3 +17,21 @@ madam and arun went to level racecar station
 Output:
 madam
 '''
+s = input('Enter a string: ')
+Pelindrom = False
+words = s.split()
+
+for i in range(len(words)):
+     
+    word = words[i]
+    rev = word[::-1] 
+    if rev == word:
+        Pelindrom = True 
+       
+        if Pelindrom:
+            print(word)  
+            break 
+        else:
+            print('not')  
+            
+
