@@ -29,13 +29,20 @@ pos = []
 neg = []
 
 for i in arr:
-   if i > 0:
+   if i >= 0:
       pos.append(i)
    else:
       neg.append(i)
-res = pos + neg
 
-for i in range(len(res)):
+
+res = []
+for i in range(n):
+     if i < len(pos):
+         res.append(pos[i])
+     if i < len(neg):
+         res.append(neg[i])
+
+print(res) 
               
 
 
