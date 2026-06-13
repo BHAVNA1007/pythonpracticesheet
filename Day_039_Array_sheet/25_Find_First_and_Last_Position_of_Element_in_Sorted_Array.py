@@ -20,3 +20,23 @@ Example 3:
 Input: nums = [], target = 0
 Output: [-1,-1]
 '''
+
+n = int(input("Enter the size of arr:  "))
+
+nums = []
+for i in range(n):
+    nums.append(int(input()))
+print(nums)
+
+f_index = -1
+l_index = -1
+
+target = int(input("Enter target: "))
+for i in range(n):
+    if nums[i] == target:
+        if f_index == -1:
+            f_index = i
+            
+        l_index = i          
+print([f_index, l_index])        
+    

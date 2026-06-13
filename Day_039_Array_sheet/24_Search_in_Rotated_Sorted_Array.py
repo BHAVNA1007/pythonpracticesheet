@@ -19,3 +19,18 @@ Example 3:
 Input: nums = [1], target = 0
 Output: -1
 '''
+n = int(input("Enter size of nums: "))
+
+nums = []
+for i in range(n):
+    nums.append(int(input()))
+print(nums)
+
+index = -1
+target = int(input("Enter the target: "))
+for i in range(n):
+    if nums[i] == target:
+        index = i
+        break
+print(index)
+        

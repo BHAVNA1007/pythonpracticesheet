@@ -16,3 +16,15 @@ Example 2:
 Input: nums = [2,0,1]
 Output: [0,1,2]
 '''
+n = int(input("Enter size of arr: "))
+
+nums = []
+for i in range(n):
+    nums.append(int(input()))
+print()
+
+for i in range(n):
+    for j in range(i+1,n):
+        if nums[i] > nums[j]:
+            nums[i], nums[j] = nums[j], nums[i]
+print(nums)            

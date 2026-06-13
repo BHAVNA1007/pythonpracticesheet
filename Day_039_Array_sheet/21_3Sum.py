@@ -25,4 +25,22 @@ Input: nums = [0,0,0]
 Output: [[0,0,0]]
 Explanation: The only possible triplet sums up to 0.
 '''
- 
+n = int(input("Enter size of nums: "))
+
+nums = []
+for i in range(n):
+    nums.append(int(input()))
+print(nums) 
+
+triplet = []
+for i in range(n):
+    for j in range(i+1, n):
+        for k in range(j+1,n):
+            if i != j and i != k and j != k:
+                if nums[i] + nums[j] + nums[k] == 0:
+                    trip = sorted([nums[i],nums[j],nums[k]])
+                    
+                    if trip not in triplet:
+                        triplet.append(trip)
+
+print(triplet)                    
