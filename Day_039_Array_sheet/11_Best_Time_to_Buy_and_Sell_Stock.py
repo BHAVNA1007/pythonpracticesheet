@@ -19,3 +19,24 @@ Input: prices = [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transactions are done and the max profit = 0.
  '''
+ 
+n = int(input("Enter a size of arr: "))
+ 
+prices = []
+for i in range(n):
+    prices.append(int(input()))
+print(prices)
+
+day = 0
+maximum = 0
+for i in range(n):
+   
+    for j in range(i+1, n):
+        profit = prices[j] - prices[i] 
+        if profit > maximum:
+            day = j+1
+            maximum = profit
+            
+print(maximum)        
+            
+            
