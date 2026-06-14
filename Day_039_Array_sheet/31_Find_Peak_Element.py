@@ -22,4 +22,58 @@ Input: nums = [1,2,1,3,5,6,4]
 Output: 5
 Explanation: Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.
 '''
- 
+'''
+n = int(input("Enter size of arr: "))
+
+nums = []
+
+for i in range(n):
+    nums.append(int(input()))
+print(nums)    
+
+peak_index = -1
+for i in range(n):
+    if i == 0:
+        if n == 1 or nums[i] >= nums[i+1]:
+            peak_index = i 
+            break
+    elif i == n-1:
+        if nums[i] >= nums[i-1]:
+            peak_index = i 
+            break 
+    else:
+        if  nums[i] >= nums[i-1] and nums[i] >= nums[i+1]:
+            peak_index = i 
+          
+if peak_index != -1:
+    print("peak ele. is: ", peak_index)
+
+else:
+    print("no peak index")  
+'''    
+n = int(input("Enter size of arr: "))
+
+nums = []
+
+for i in range(n):
+    nums.append(int(input()))
+print(nums)      
+   
+peak = -1
+
+for i in range(n):
+    if i == 0:
+        if n ==1 or nums[i]>=nums[i+1]:
+            peak = i 
+            break
+    elif i == n-1:
+        if nums[i] >= nums[i-1]:
+            peak = i 
+            break
+    else:
+        if nums[i] >= nums[i-1] and nums[i]>=nums[i+1]:
+            peak = i 
+if peak != -1:
+    print(peak)
+else:
+    print("not exists")    

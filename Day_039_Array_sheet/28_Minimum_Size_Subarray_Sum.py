@@ -17,3 +17,30 @@ Example 3:
 Input: target = 11, nums = [1,1,1,1,1,1,1,1]
 Output: 0
 '''
+n = int(input("Enter size of arr: "))
+
+nums = []
+for i in range(n):
+    nums.append(int(input()))
+print(nums)
+
+target = int(input("Enter target: "))
+found = False
+res = nums
+
+for i in range(n):
+    
+    for j in range(i,n):
+        sub = nums[i: j+1]
+        #print(sub)  
+        if sum(sub) >= target:
+            if len(sub)<len(res):
+                found = True
+                res=sub
+                
+if found :
+    print(len(res))
+else:
+    print("0")    
+    
+                 
