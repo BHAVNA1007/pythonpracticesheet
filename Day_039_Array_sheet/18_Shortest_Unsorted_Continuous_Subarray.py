@@ -4,8 +4,6 @@ Given an integer array nums, you need to find one continuous subarray such that 
 
 Return the shortest such subarray and output its length.
 
- 
-
 Example 1:
 
 Input: nums = [2,6,4,8,10,9,15]
@@ -20,4 +18,5 @@ Example 3:
 Input: nums = [1]
 Output: 0
 '''
+ 
  

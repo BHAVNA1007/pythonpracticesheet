@@ -29,14 +29,17 @@ n = int(input("Enter size of arry: "))
 nums = []
 for i in range(n):
     nums.append(int(input()))
-print(nums)    
+print(nums)  
 
-g = nums[0]
-for i in range(n):
-    if len(nums) < 3:
-        if nums[i] > g:
-            g = nums[i]
-            print(g)
-        
-        
-                    
+if len(nums)>=3:
+    nums.sort()
+    res = []
+    for i in nums:
+        if i not in res:
+            res.append(i)
+    print(res[-3])
+
+else:
+    nums.sort()
+    print(nums[-1])    
+   

@@ -26,3 +26,13 @@ Explanation:
 n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.
 
 '''
+n = int(input("Enter n: "))
+
+nums = []
+for i in range(n):
+    nums.append(int(input()))
+print(nums)
+
+for i in range(n+1):
+    if i not in nums:
+        print(i)        
