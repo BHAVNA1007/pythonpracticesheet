@@ -25,15 +25,10 @@ Requirements:
 - Show that modification is not allowed.
 '''
 
-n =  int(input("Enter sub how many: "))
-sub = []
-
-for i in range(n):
-       sub.append(input())
-fs = frozenset(sub)       
+sub = frozenset({"python","java","mysql","react","spring boot"})
 
 while True:
-    print("Menu")
+    print("\nMenu:\n")
     print("1. Display Subjects")
     print("2. Search Subject")
     print("3. Count Subjects")
@@ -44,23 +39,28 @@ while True:
     
     match choice:
         case 1:
-            print("Subjects: ", fs)
+            print("\nSubjects are: ")
+            for i in sub:
+               print(i,end=" ")  
             
         case 2:
-            s = input("Enter subject: ")
-            if s in fs:
-                print("subject found")
+            s = input("\nEnter subject name for search: ")
+            if s in sub:
+                print("\nsubject found")
             else:             
-                print("subject not found")      
+                print("\nsubject not found")      
         case 3:
-                total = len(fs)
+                total = len(sub)
                 print("Count Subjects",total)       
         case 4:
-                print("Cannot add subject because frozenset is immutable.")
+                s = input("Enter subject to add: ")
+                sub.add(s) #frozenset has no attribut add error throw
                 
         case 5:
                 print("Exit..................")   
-                break                
+                break    
+        case _:
+               print("\ninvalid choice:")             
                             
 
 

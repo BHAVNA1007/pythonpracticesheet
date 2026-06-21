@@ -20,11 +20,8 @@ Requirements:
 - Use add(), remove(), and membership operations.
 '''
 
-n = int(input("Enter number of visitors: "))
-v_id = set()
-for i in range(n):
-    v_id.add(int(input(f"visitor id {i+1}: ")))
-print(v_id)        
+
+visitor = set()
 
 while True:
      
@@ -41,34 +38,40 @@ while True:
     
     match choice:
         case 1:
-                v_id.add(int(input("Add Visitor: ")))     
-                print(v_id)
+                n = int(input("\nEnter number of visitors:"))
+                for i in range(n):
+                   visitor.add(int(input("Add Visitor: ")))    
                 
         case 2:
-                v_id.discard(int(input(" Remove Visitor: ")))     
-                print(v_id)        
+                v_id = int(input("\nEnter visitor id to remove visitor:"))
+                if v_id in visitor:     
+                    visitor.remove(v_id)  
+                    print(f"\nvisitore with id {v_id} removed succesfully:")
+                else:
+                    print(f"\nvisitor with id {v_id} not available: ")            
                 
         case 3:
-                id = int(input("Enter id: "))
-                if id in v_id :
+                v_id = int(input("\nEnter id for search: "))
+                if v_id in visitor:
                         print("visitor found")
                 else:
                         print("visitor not found")
         case 4:
-                for visitor in v_id:
-                    print(visitor,end=" ")
+                print("\nAll visitors: ")
+                for v in visitor:
+                    print(v,end=" ")
                 print()                    
 
         case 5:
-                unique = len(v_id)
-                print("Count Unique Visitors",unique)       
+                unique = len(visitor)
+                print("\nCount Unique Visitors",unique)       
 
         case 6:
-                print("Clear Visitor Data: ") 
-                v_id.clear()        
-                print(v_id)
+                print("\nClear Visitor Data: ") 
+                visitor.clear()        
+                print(visitor)
 
         case 7:
-                print("Exit..................")             
+                print("\nExit..................")             
                 break                
                            

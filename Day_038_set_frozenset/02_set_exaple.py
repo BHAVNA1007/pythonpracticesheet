@@ -26,9 +26,10 @@ Requirements:
 - Use membership operator (in).
 - Use union, intersection and difference operations.
 '''
-
+python_c = set()
+java_c = set()
 while True:
-    print("*********menu***********")
+    print("\n*********menu***********\n")
     print("1. Enroll Student in Python")  
     print("2. Enroll Student in Java") 
     print("3. Display Python Students") 
@@ -40,49 +41,69 @@ while True:
     print("9. Display Total Unique Students") 
     print("10. Exit") 
     
-    choice = int(input("Enter a choice: "))
+    choice = int(input("\nEnter a choice: "))
     
     match choice:
         case 1:
-            n = int(input("Enter number of student in python: "))
-            p_s = set()
+            n = int(input("\nEnter number of student in python: "))
+            
             for i in range(n):
-                 p_s.add(input(f"Email student {i+1}: "))
-            print(p_s)        
+                python_c.add(input(f"Enter Email id of python students {i+1}: "))
+            #print(python_c)        
 
         case 2:
-            n = int(input("Enter number of student in java: "))
-            j_s = set()
+            n = int(input("\nEnter number of student in java: "))
+            
             for i in range(n):
-                j_s.add(input(f"Email student {i+1}: "))
-            print(j_s)    
+                java_c.add(input(f"Enter Email id of java students {i+1}: "))
+            #print(java_c)    
         case 3:
-            print("Display Python Students: ", p_s) 
+            print("\nDisplay Python Students: ")
+            for i in python_c:
+                print(i,end=' ')
+                print() 
             
         case 4:
-            print("Display Java Students: ", j_s)     
+            print("\nDisplay Java Students: ")
+            for i in java_c:
+                print(i,end=' ')  
+                print()   
             
         case 5:
-            print("5. Find Students Enrolled in Both Courses: ",p_s & j_s)  
+            print("\n5. Find Students Enrolled in Both Courses: ") 
+            for i in python_c.intersection(java_c):
+                print(i,end=' ') 
+                print()
             
         case 6:   
-            print("6. Find Students Enrolled Only in Python", p_s - j_s)
+            print("\n6. Find Students Enrolled Only in Python:")
+            for i in python_c.difference(java_c):
+                print(i, end=' ')
+                print()
 
         case 7:            
-            print("7. Find Students Enrolled Only in Java",  j_s - p_s )
+            print("\n7. Find Students Enrolled Only in Java")
+            for i in java_c.difference(python_c):
+                print(i,end=' ')
+                print()
             
         case 8:    
-            in_python = len(p_s )
-            print("8. Check Enrollment in Python Course: ",  in_python)
+            stu = input("\nEnter student email id: ")
+            if stu in python_c:
+                print("\nstudent alredy enrolled")
+            else:
+                print("\nstudent not enrolled:")    
             
         case 9:    
-            
-            total = len(p_s | j_s)
-            print("9. Display Total Unique Students: ", total) 
+            print("\n9.Total Unique Students are: ") 
+            print(len(java_c.union(python_c)))
             
         case 10:
             print("Thank you !!!!!!!!!!!!!!!!!!")            
             break
+
+        case _:
+            print("\ninvalid choice: ")
      
 
   

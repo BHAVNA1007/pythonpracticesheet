@@ -26,11 +26,11 @@ Requirements:
 - Apply intersection, difference, and union operations.
 '''
 
-coding_c = {2,3,4,5,6}
-robotics_c = {3,5,7,8,9}
+coding_c =  set()
+robotics_c = set()
 
 while True:
-    print("*********menu***********")
+    print("\n*********menu***********\n")
     print("1. Add Student to Coding Club")  
     print("2. Add Student to Robotics Club") 
     print("3. Display Students in Coding Club") 
@@ -42,41 +42,56 @@ while True:
     print("9. Display Total Unique Club Members") 
     print("10. Exit") 
     
-    choice = int(input("Enter a choice: "))
+    choice = int(input("\nEnter a choice: "))
     
     match choice:
         case 1:
-            coding_c.add(10)
-            print(coding_c)     
+            n = int(input("\nNumber of students in coding club: "))
+            for i in range(n):
+                coding_c.add(input(f"Enter id c_c {i+1}: "))  
 
         case 2:
-            robotics_c.add(1)
-            print(robotics_c )   
-    
+            n = int(input("\nNumber of students in robotics club: "))
+            for i in range(n):
+                robotics_c.add(input(f"Enter id r_c {i+1}: "))  
+ 
         case 3:
-           print(coding_c)        
-
+           print("\nstudents in coding club are: ")
+           for i in coding_c:
+               print(i,end=' ')
         case 4:
-            print(robotics_c )      
+            print("\nstudents in robotics club are: ")
+            for i in robotics_c:
+                print(i,end=' ')      
 
         case 5:
-            print("Students in Both Clubs",robotics_c &  coding_c )   
+            print("\nStudents in Both Clubs are: " )   
+            for i in coding_c.intersection(robotics_c):
+                print(i,end=' ')
 
         case 6:
-            print(" Students Only in Coding Club", coding_c - robotics_c  )      
+            print("\nStudents Only in Coding Club are:" )
+            for i in coding_c.difference(robotics_c):
+                print(i,end=' ')      
 
         case 7:
-            print(" Students Only in Robotics Club", robotics_c  - coding_c  ) 
+            print("\nStudents Only in Robotics Club are:")
+            for i in robotics_c.difference(coding_c):
+                print(i,end=' ') 
             
         case 8:
-            print("Display All Unique Club Members", robotics_c |coding_c  )  
+            print("\nDisplay All Unique Club Members are:")
+            for i in robotics_c.union(coding_c):
+                print(i,end=' ')  
 
         case 9:
-            total = len(robotics_c |coding_c )
-            print("total Unique Club Members",total )            
+            print("\nall unique club members are: ")
+            print(len(robotics_c.union(coding_c)))            
 
         case 10:
             print("Thank you  for visiting...")      
-            break            
+            break
+        case _:
+            print("\ninvalid choice")            
             
 

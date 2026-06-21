@@ -20,35 +20,38 @@ String2: typhoon
 Output:
 {p, t, h, o, n}
 '''
-
+str1 = ''
+str2 = ''
 while True:
-    print("Menu")
+    print("\nMenu\n")
     print("1. Enter First String") 
     print("2. Enter Second String")
     print("3. Display Common Characters")
     print("4. Count Common Characters")
     print("5. Exit")
     
-    choice = int(input("Enter a choice: "))
+    choice = int(input("\nEnter a choice: "))
     
     match choice:
         case 1:
-            str1 = input("Enter first string: ")         
+            str1 = input("\nEnter first string: ")         
 
         case 2:
-            str2 = input("Enter second string: ")         
+            str2 = input("\nEnter second string: ")         
        
         case 3:
-            common = set(str1) & set(str2) 
-            print("Common cgaracters: ",common)
+            print("\nCommon characters are: ")
+            print(set(str1).intersection(str2))
 
         case 4:
-            common = set(str1) & set(str2) 
-            print("count of Common cgaracters: ",len(common))
+            print("\ncount of Common characters are: ")
+            print(len(set(str1).intersection(str2)))
             
         case 5:
-            print("Exit.................")            
+            print("\nExit.................")            
             
-            break                
+            break 
+        case _:
+            print("\ninvalid choice:")               
     
 
