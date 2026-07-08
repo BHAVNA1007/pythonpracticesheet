@@ -14,28 +14,34 @@ Input: nums = [1,2,3], k = 3
 Output: 2
  '''
 
-n = int(input("Enter n: "))
+n = int(input("Enter size: "))
 
 nums = []
 
 for i in range(n):
-   nums.append(int(input(f"elements {i+1} : ")))
- 
+   nums.append(int(input(f"ele {i+1} : ")))
+
 print(nums)
 
-target = int(input("Enter k : "))
-count = 0
-for i in range(n):
+K = int(input("K : "))
 
-    for j in range(i,n):
- 
+count = 0
+
+for i in range(n):
+    
+    for j in range(i, n):
+
         sum = 0
-        for k in range(i,j+1):
-            sum = sum + nums[k]
-        if sum == target :
-               count += 1
+        for k in range(i, j+1):
+           sum = sum + nums[k]
+
+        if sum == K:
+           count += 1
 
 print(count)
+    
+
   
-  
-        
+
+
+

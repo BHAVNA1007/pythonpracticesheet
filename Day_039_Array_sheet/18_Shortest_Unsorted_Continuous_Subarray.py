@@ -18,5 +18,43 @@ Example 3:
 Input: nums = [1]
 Output: 0
 '''
+
+n = int(input("Enter size: "))
+nums = []
+
+for i in range(n):
+   nums.append(int(input(f"Ele {i+1}: ")))
+
+print(nums)
+
+
+sorted_nums = sorted(nums)
+
+start = -1
+end = -1
+
+for i in range(len(nums)):
+
+    if nums[i] != sorted_nums[i]:
+       
+        if start == -1:
+          
+             start = i
+  
+        end = i
+
+if start == -1:
+   print(0)
+
+else:
+   length = end - start + 1
+   print(length) 
+
+
+   
+
+          
+            
+          
  
  
