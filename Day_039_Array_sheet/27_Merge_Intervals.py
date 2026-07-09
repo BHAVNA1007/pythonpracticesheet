@@ -19,4 +19,41 @@ Input: intervals = [[4,7],[1,4]]
 Output: [[1,7]]
 Explanation: Intervals [1,4] and [4,7] are considered overlapping.
 '''
+
+row = int(input('Enter row: '))
+col = int(input("Enter col: "))
+
+intervals = []
+
+for r in range(row):
+  row = [] 
+  for c in range(col):
+     row.append(int(input(f"ele: [{r}][{c}] ")))
+  intervals.append(row)
+print(intervals)
+  
+
+sorted_interval = sorted(intervals)
+
+#print(sorted_interval)
+
+res = [intervals[0]]
+
+for curr in intervals[1:]:
+
+    last = res[-1]
+    
+    if curr[0] <= last[1]:
+       last[1] = max(last[1], curr[1])
+
+    else:
+       res.append(curr)
+print(res)
+ 
+     
+
+     
+     
+   
+
  
