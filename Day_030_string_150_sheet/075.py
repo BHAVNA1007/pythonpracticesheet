@@ -4,9 +4,24 @@
 
 '''
 
-s = input('Enter a string: ')
+n = int(input("N: "))
 
-s1 = s.split()
+strings = []
 
-print(s1)
+for i in range(n):
 
+    strings.append(input(f"str{i+1} : "))
+
+print(strings)
+
+prefix = strings[0]
+
+for s in strings[1:]:
+
+   while not s.startswith(prefix):
+       prefix = prefix[:-1]
+
+print('longest common prefix is: ', prefix)
+
+
+     
